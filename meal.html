@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>料理 | もりのホテル</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="mv is-sub is-meal">
+        <div class="mv__header">
+            <a href="reservation-step1.html" class="mv__reserve-btn">Reservation / ご予約 →</a>
+        </div>
+
+        <div class="mv__title-area">
+            <h1 class="mv__main-title">料理</h1>
+            <span class="mv__sub-title">Meal</span>
+        </div>
+
+        <nav class="mv__nav">
+            <ul class="mv__nav-list">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="onsen.html">温泉</a></li>
+                <li><a href="meal.html">料理</a></li>
+                <li><a href="room1.html">客室</a></li>
+                <li><a href="room2.html">宿泊プラン</a></li>
+                <li><a href="access.html">アクセス</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <div class="l-container">
+                <h2 class="intro__title">心に響く、京の旬を味わう</h2>
+                <p class="intro__text">
+                    京都ならではの旬の食材を活かし、季節ごとの味わいをお楽しみいただけます。<br>
+                    朝ごはんにも地元の素材を取り入れ、心温まる一品をご用意しております。<br>
+                    どのお料理も、京都の恵みを感じていただけるよう、心を込めてお作りしています。
+                </p>
+            </div>
+        </section>
+
+        <section class="p-meal">
+            <div class="l-container">
+
+                <div class="c-section-title -dark">
+                    <div class="c-section-title__inner">
+                        <div class="c-section-title__ja">ご夕食</div>
+                        <div class="c-section-title__en">Dinner</div>
+                    </div>
+                </div>
+
+                <div class="p-meal__item">
+                    <div class="p-meal__info">
+                        <div class="p-meal__titles">
+                            <h3 class="p-meal__menu-name">極上和食コース 〜 煌 Kou 〜</h3>
+                            <p class="p-meal__menu-tag">料理長厳選・最高級懐石</p>
+                        </div>
+                        <p class="p-meal__caption">※ 写真は一例となります。季節により内容は異なります。</p>
+                    </div>
+
+                    <div class="p-meal__card">
+                        <div class="p-meal__image">
+                            <img src="img/meal1.jpg" alt="煌 Kou">
+                            <div class="p-meal__image-tag">春のお品書き一例</div>
+                        </div>
+
+                        <div class="p-meal__action">
+                            <button class="c-btn-meal js-accordion-trigger">
+                                <span>お品書きの詳細を見る</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+                        </div>
+
+                        <div class="p-meal__accordion js-accordion-content" style="display: none;">
+                            <div class="p-meal__menu-list">
+                                <div class="p-meal__menu-group"><span class="p-meal__course-label">ー 食前酒 ー</span>
+                                    <h4>京都産青梅の自家製梅酒</h4>
+                                </div>
+                                <div class="p-meal__menu-group"><span class="p-meal__course-label">ー 先付 ー</span>
+                                    <h4>ズワイ蟹菊花和え</h4>
+                                </div>
+                                <div class="p-meal__menu-group"><span class="p-meal__course-label">ー 御造り ー</span>
+                                    <h4>市場直送 旬魚五種盛り（甘海老、間八、鮪、サーモン、イカ）</h4>
+                                </div>
+                                <div class="p-meal__menu-group"><span class="p-meal__course-label">ー 強肴 ー</span>
+                                    <h4>京の九条葱と自家製ローストビーフ</h4>
+                                </div>
+                                <div class="p-meal__menu-group"><span class="p-meal__course-label">ー 焜炉 ー</span>
+                                    <h4>湯原産青大豆「キヨミドリ」使用 濃厚豆乳鍋</h4>
+                                </div>
+                                <div class="p-meal__menu-group"><span class="p-meal__course-label">ー 焼物八寸 ー</span>
+                                    <h4>海老の二色焼きと季節の山海八寸盛り</h4>
+                                </div>
+                                <div class="p-meal__menu-group"><span class="p-meal__course-label">ー 揚物 ー</span>
+                                    <h4>香ばし河豚唐揚げ 宇治抹茶塩添え</h4>
+                                </div>
+                                <div class="p-meal__menu-group"><span class="p-meal__course-label">ー 蓋物 ー</span>
+                                    <h4>吉野葛仕立ての蓮根万頭</h4>
+                                </div>
+                                <div class="p-meal__menu-group">
+                                    <span class="p-meal__course-label">ー 厳選 ー</span>
+                                    <h4>A5ランク黒毛和牛ステーキ</h4>
+                                    <p>お好みの焼き加減で、特製ポン酢と岩塩にて</p>
+                                </div>
+                                <div class="p-meal__menu-group"><span class="p-meal__course-label">ー 御食事 ー</span>
+                                    <h4>香ばし牡蠣の土鍋釜飯</h4>
+                                </div>
+                                <div class="p-meal__menu-group"><span class="p-meal__course-label">ー 汁物 ー</span>
+                                    <h4>白子つみれの澄まし汁</h4>
+                                </div>
+                                <div class="p-meal__menu-group"><span class="p-meal__course-label">ー 香物 ー</span>
+                                    <h4>京漬物 三種盛り</h4>
+                                </div>
+                                <div class="p-meal__menu-group"><span class="p-meal__course-label">ー 水物 ー</span>
+                                    <h4>宇治抹茶アイスと季節のデザート盛り合わせ</h4>
+                                </div>
+
+                                <div class="p-meal__menu-note">
+                                    <p>※旬の美味しいものを召し上がって頂くため、<br>仕入れ状況により内容を替えさせて頂く場合がございます。</p>
+                                </div>
+                                <div class="p-meal__menu-footer">
+                                    <p class="u-close-text js-accordion-close">閉じる <i
+                                            class="fa-solid fa-chevron-up"></i></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-meal__item">
+                    <div class="p-meal__info">
+                        <div class="p-meal__titles">
+                            <h3 class="p-meal__menu-name">季節の洋食懐石 〜 雅 Miyabi 〜</h3>
+                            <p class="p-meal__menu-tag">彩り豊かな旬の味覚</p>
+                        </div>
+                        <p class="p-meal__caption">※ 写真は一例となります</p>
+                    </div>
+
+                    <div class="p-meal__card">
+                        <div class="p-meal__image">
+                            <img src="img/meal2.jpg" alt="雅 Miyabi">
+                            <div class="p-meal__image-tag">春のお品書き一例</div>
+                        </div>
+
+                        <div class="p-meal__action">
+                            <button class="c-btn-meal js-accordion-trigger">
+                                <span>お品書きの詳細を見る</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+                        </div>
+
+                        <div class="p-meal__accordion js-accordion-content" style="display: none;">
+                            <div class="p-meal__menu-list">
+                                <div class="p-meal__menu-group"><span class="p-meal__course-label">ー アミューズ ー</span>
+                                    <h4>旬の京野菜のムースとズワイ蟹のカクテル</h4>
+                                    <p>海の幸の旨味を、なめらかなお野菜の泡と共にさっぱりと</p>
+                                </div>
+                                <div class="p-meal__menu-group"><span class="p-meal__course-label">ー オードブル ー</span>
+                                    <h4>厳選鮮魚のカルパッチョ 〜 季節のハーブソース 〜</h4>
+                                    <p>特選の鮪や甘海老を、爽やかなハーブの特製ソースで彩り豊かに</p>
+                                </div>
+                                <div class="p-meal__menu-group"><span class="p-meal__course-label">ー スープ ー</span>
+                                    <h4>京都宇治産ごぼうの濃厚ポタージュ</h4>
+                                    <p>素材が持つ風味とコクを引き出し、カプチーノ仕立てにしました</p>
+                                </div>
+                                <div class="p-meal__menu-group"><span class="p-meal__course-label">ー ポワソン（魚料理） ー</span>
+                                    <h4>真鯛とオマール海老のポワレ 〜 ブランソース 〜</h4>
+                                    <p>皮目はパリッと、身はしっとりと焼き上げた贅沢な一皿</p>
+                                </div>
+                                <div class="p-meal__menu-group"><span class="p-meal__course-label">ー アントレ（肉料理） ー</span>
+                                    <h4>特選牛フィレ肉のロースト 〜 赤ワインと西京味噌のソース 〜</h4>
+                                    <p>絶妙な火入れのフィレ肉に、京都の西京味噌を隠し味にしたコクのある特製ソース</p>
+                                </div>
+                                <div class="p-meal__menu-group"><span class="p-meal__course-label">ー ブレッド ー</span>
+                                    <h4>焼き立ての自家製パン（バゲット＆クロワッサン）</h4>
+                                    <p>地元の小麦を使用し、外はサクッと、中はもちもちに仕上げました</p>
+                                </div>
+                                <div class="p-meal__menu-group"><span class="p-meal__course-label">ー デセール ー</span>
+                                    <h4>特製ガトーショコラとピスタチオのアイスクリーム</h4>
+                                    <p>濃厚なショコラと芳醇なピスタチオの織りなす極上のデザート</p>
+                                </div>
+                                <div class="p-meal__menu-group"><span class="p-meal__course-label">ー カフェ ー</span>
+                                    <h4>焙煎珈琲 または 京都のハーブティー</h4>
+                                    <p>お食事の余韻を楽しんでいただく一杯</p>
+                                </div>
+
+                                <div class="p-meal__menu-note">
+                                    <p>※旬の美味しいものを召し上がって頂くため、<br>仕入れ状況により内容を替えさせて頂く場合がございます</p>
+                                </div>
+                                <div class="p-meal__menu-footer">
+                                    <p class="u-close-text js-accordion-close">閉じる <i
+                                            class="fa-solid fa-chevron-up"></i></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-meal__item">
+                    <div class="p-meal__info">
+                        <div class="p-meal__titles">
+                            <h3 class="p-meal__menu-name">こだわり中華懐石 〜 粋 Iki 〜</h3>
+                            <p class="p-meal__menu-tag">お手軽満足プラン</p>
+                        </div>
+                        <p class="p-meal__caption">※ 写真は一例となります</p>
+                    </div>
+
+                    <div class="p-meal__card">
+                        <div class="p-meal__image">
+                            <img src="img/meal3.jpg" alt="粋 Iki">
+                        </div>
+
+                        <div class="p-meal__action">
+                            <button class="c-btn-meal js-accordion-trigger">
+                                <span>お品書きの詳細を見る</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+                        </div>
+
+                        <div class="p-meal__accordion js-accordion-content" style="display: none;">
+                            <div class="p-meal__menu-list">
+                                <div class="p-meal__menu-group"><span class="p-meal__course-label">ー 冷菜 ー</span>
+                                    <h4>中華風 旬の鮮魚のカルパッチョ</h4>
+                                    <p>特製の胡麻醤油ソースと薬味で、さっぱりと仕上げました</p>
+                                </div>
+                                <div class="p-meal__menu-group"><span class="p-meal__course-label">ー 湯（スープ） ー</span>
+                                    <h4>干し貝柱とフカヒレの極上とろみスープ</h4>
+                                    <p>じっくり煮込んだ高級出汁に、フカヒレの食感が豊かな一杯</p>
+                                </div>
+                                <div class="p-meal__menu-group"><span class="p-meal__course-label">ー 点心 ー</span>
+                                    <h4>自家製蒸し小籠包と特製海老餃子</h4>
+                                    <p>旨味溢れる熱々の肉汁と、ぷりぷりの海老の食感をお楽しみください</p>
+                                </div>
+                                <div class="p-meal__menu-group"><span class="p-meal__course-label">ー 海鮮料理 ー</span>
+                                    <h4>大海老のチリソース炒め 〜 おこげ添え 〜</h4>
+                                    <p>ピリッとした辛みの中にコクがある、当店自慢の本格チリソース</p>
+                                </div>
+                                <div class="p-meal__menu-group"><span class="p-meal__course-label">ー 肉料理 ー</span>
+                                    <h4>京都産銘柄豚の厳選こだわり黒酢古老肉（スブタ）</h4>
+                                    <p>厳選された柔らかな豚肉を、芳醇な黒酢ソースで上品に絡めました</p>
+                                </div>
+                                <div class="p-meal__menu-group"><span class="p-meal__course-label">ー 麺飯 ー</span>
+                                    <h4>パラパラ極上カニ炒飯 または 本格四川麻婆豆腐御飯</h4>
+                                    <p>強火で一気に仕上げた香ばしい風味を締め括りに</p>
+                                </div>
+                                <div class="p-meal__menu-group"><span class="p-meal__course-label">ー 甜点（デザート） ー</span>
+                                    <h4>なめらか杏仁豆腐と本格胡麻団子</h4>
+                                    <p>お口直しにぴったりの優しい甘みと、揚げたての香ばしいお団子</p>
+                                </div>
+                                <div class="p-meal__menu-note">
+                                    <p>※旬の美味しいものを召し上がって頂くため、<br>仕入れ状況により内容を替えさせて頂く場合がございます</p>
+                                </div>
+                                <div class="p-meal__menu-footer">
+                                    <p class="u-close-text js-accordion-close">閉じる <i
+                                            class="fa-solid fa-chevron-up"></i></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="c-section-title -dark">
+                    <div class="c-section-title__inner">
+                        <h2 class="c-section-title__ja">ご朝食</h2>
+                        <span class="c-section-title__en">Breakfast</span>
+                    </div>
+                </div>
+
+                <div class="p-meal__item">
+                    <div class="p-meal__info">
+                        <div class="p-meal__titles">
+                            <h3 class="p-meal__menu-name">もりのご馳走朝食</h3>
+                            <p class="p-meal__menu-tag">目覚めの体に優しい和食膳</p>
+                        </div>
+                        <p class="p-meal__caption">※ 写真は一例となります</p>
+                    </div>
+
+                    <div class="p-meal__card">
+                        <div class="p-meal__image">
+                            <img src="img/meal4.jpg" alt="ご朝食">
+                        </div>
+                        <div class="p-meal__action">
+                            <button class="c-btn-meal js-accordion-trigger">
+                                <span>お品書きの詳細を見る</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+                        </div>
+
+                        <div class="p-meal__accordion js-accordion-content" style="display: none;">
+                            <div class="p-meal__menu-list">
+                                <div class="p-meal__menu-group">
+                                    <span class="p-meal__course-label">ー 目覚まし ー</span>
+                                    <h4>お目覚めの生搾りジュース</h4>
+                                    <p>地元の新鮮な果物と野菜を使った、すっきりとした味わい</p>
+                                </div>
+                                <div class="p-meal__menu-group">
+                                    <span class="p-meal__course-label">ー 小鉢 ー</span>
+                                    <h4>京の小鉢三種盛り</h4>
+                                    <p>京小松菜とお雑魚のお浸し、おばんざい、季節の白和え</p>
+                                </div>
+                                <div class="p-meal__menu-group">
+                                    <span class="p-meal__course-label">ー 名物 ー</span>
+                                    <h4>名代・こだわり出汁巻き卵</h4>
+                                    <p>毎朝職人が一本ずつ丁寧に焼き上げる、出汁が溢れる自慢の一品</p>
+                                </div>
+                                <div class="p-meal__menu-group">
+                                    <span class="p-meal__course-label">ー 逸品 ー</span>
+                                    <h4>宇治豆腐の湯豆腐</h4>
+                                    <p>なめらかな国産大豆のコクを、特製のポン酢と薬味でさっぱりと</p>
+                                </div>
+                                <div class="p-meal__menu-group">
+                                    <span class="p-meal__course-label">ー 焼物 ー</span>
+                                    <h4>若狭産の一夜干し</h4>
+                                    <p>程よく脂ののった旬魚を、香ばしく炭火で炙りました</p>
+                                </div>
+                                <div class="p-meal__menu-group">
+                                    <span class="p-meal__course-label">ー 御食事 ー</span>
+                                    <h4>京都産 幻の米「こしひかり」土鍋炊き</h4>
+                                    <p>職人が一文字ずつ丁寧に炊き上げた、艶やかな香りと甘み</p>
+                                </div>
+                                <div class="p-meal__menu-group">
+                                    <span class="p-meal__course-label">ー 汁物 ー</span>
+                                    <h4>京白味噌の味噌汁</h4>
+                                    <p>まろやかな甘みの白味噌に、九条葱と生麩を添えて</p>
+                                </div>
+                                <div class="p-meal__menu-group">
+                                    <span class="p-meal__course-label">ー 水物 ー</span>
+                                    <h4>季節の果物と自家製ヨーグルト</h4>
+                                    <p>爽やかなお口直しで、心地よい一日の始まりを</p>
+                                </div>
+
+                                <div class="p-meal__menu-note">
+                                    <p>※旬の美味しいものを召し上がって頂くため、<br>仕入れ状況により内容を替えさせて頂く場合がございます</p>
+                                </div>
+                                <div class="p-meal__menu-footer">
+                                    <p class="u-close-text js-accordion-close">閉じる <i
+                                            class="fa-solid fa-chevron-up"></i></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="p-allergy">
+            <div class="l-container">
+                <div class="p-allergy__header">
+                    <p class="u-text-red">【重要】</p>
+                    <h2 class="p-allergy__title">食物アレルギーの対応につきまして</h2>
+                </div>
+
+                <div class="p-allergy__content">
+                    <h3 class="p-allergy__sub-title">【対応できるアレルギー】</h3>
+                    <div class="p-allergy__box">
+                        <p>エビ・かに・鶏卵・そば・小麦・乳製品・落花生（主要７品目）＋鶏・豚・牛肉</p>
+                    </div>
+                    <ul class="p-allergy__list">
+                        <li>上記品目が主原料として使用の場合、別の食材へ差し替えが可能です。</li>
+                        <li>当日のお申し出はお断りさせて頂きます。３日前までにお申し付け下さい。</li>
+                        <li>調理過程においてアレルゲン物質が微量に混入する可能性がございます。完全な除去を保証するものではございません。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="onsen-footer-nav">
+            <div class="l-container">
+                <div class="footer-btn-area">
+                    <a href="room2.html" class="c-btn-outline">このお料理が楽しめるプランを見る</a>
+                    <a href="room1.html" class="c-btn-outline">客室を見る</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="mountain">
+        <div class="mountain__line"></div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__line"></div>
+        <div class="footer__inner">
+            <div class="footer__top">
+                <div class="footer__info">
+                    <div class="footer__logo">
+                        <img src="img/logo.png" alt="Kyoto もりの">
+                    </div>
+                    <p class="footer__address">
+                        〒458-0000 京都府森野町29-1<br>
+                        TEL.0567-000-0000（受付9:00〜18:00）
+                    </p>
+                </div>
+                <nav class="footer__nav">
+                    <ul class="footer__links">
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="onsen.html">温泉</a></li>
+                        <li><a href="meal.html">料理</a></li>
+                        <li><a href="room1.html">客室</a></li>
+                        <li><a href="room2.html">宿泊プラン</a></li>
+                        <li><a href="access.html">アクセス</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer__bottom">
+                <ul class="footer__sns">
+                    <li><a href="#">facebook</a></li>
+                    <li><a href="#">X</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

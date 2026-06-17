@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>客室一覧 | もりのホテル</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="mv is-sub is-room">
+        <div class="mv__header">
+            <a href="reservation-step1.html" class="mv__reserve-btn">Reservation / ご予約 →</a>
+        </div>
+
+        <div class="mv__title-area">
+            <h1 class="mv__main-title">客室</h1>
+            <span class="mv__sub-title">Room</span>
+        </div>
+
+        <nav class="mv__nav">
+            <ul class="mv__nav-list">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="onsen.html">温泉</a></li>
+                <li><a href="meal.html">料理</a></li>
+                <li><a href="room1.html">客室</a></li>
+                <li><a href="room2.html">宿泊プラン</a></li>
+                <li><a href="access.html">アクセス</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="l-container">
+        <div class="p-page-header">
+            <h2 class="p-page-header__title">お部屋から選ぶ</h2>
+            <p class="p-page-header__text">お好みの客室タイプをお選びください。</p>
+        </div>
+
+        <div class="plan-items">
+            <article class="plan-card">
+                <div class="plan-card__header">
+                    <h3 class="plan-card__title">和室ツイン</h3>
+                    <p class="plan-card__desc">自然を身近に感じる、誰にでも優しい一室</p>
+                </div>
+
+                <div class="plan-card__body">
+                    <div class="plan-card__img">
+                        <img src="img/room1.jpg" alt="和室ツイン">
+                    </div>
+                    <div class="plan-card__content">
+                        <div class="plan-card__info-row">
+                            <h4 class="plan-card__plan-name">朝夕2食付き</h4>
+                            <div class="plan-card__times">
+                                <span>IN 15:00～18:00</span>
+                                <span>OUT 11:00</span>
+                            </div>
+                        </div>
+
+                        <div class="plan-card__price-row">
+                            <p class="plan-card__price">税込 <span>80,000円</span> ～</p>
+                            <a href="room3.html" class="plan-card__reserve-btn">プラン詳細を見る</a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="plan-card">
+                <div class="plan-card__header">
+                    <h3 class="plan-card__title">モダンツイン</h3>
+                    <p class="plan-card__desc">和の静寂と、ローベッドの寛ぎ</p>
+                </div>
+
+                <div class="plan-card__body">
+                    <div class="plan-card__img">
+                        <img src="img/room2.jpg" alt="モダンツイン">
+                    </div>
+                    <div class="plan-card__content">
+                        <div class="plan-card__info-row">
+                            <h4 class="plan-card__plan-name">朝夕2食付き</h4>
+                            <div class="plan-card__times">
+                                <span>IN 15:00～18:00</span>
+                                <span>OUT 11:00</span>
+                            </div>
+                        </div>
+
+                        <div class="plan-card__price-row">
+                            <p class="plan-card__price">税込 <span>80,000円</span> ～</p>
+                            <a href="room3.html" class="plan-card__reserve-btn">プラン詳細を見る</a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="plan-card">
+                <div class="plan-card__header">
+                    <h3 class="plan-card__title">洋室ツイン</h3>
+                    <p class="plan-card__desc">木の温もりに包まれ、時を忘れる</p>
+                </div>
+
+                <div class="plan-card__body">
+                    <div class="plan-card__img">
+                        <img src="img/room3.jpg" alt="洋室ツイン">
+                    </div>
+                    <div class="plan-card__content">
+                        <div class="plan-card__info-row">
+                            <h4 class="plan-card__plan-name">朝夕2食付き</h4>
+                            <div class="plan-card__times">
+                                <span>IN 15:00～18:00</span>
+                                <span>OUT 11:00</span>
+                            </div>
+                        </div>
+
+                        <div class="plan-card__price-row">
+                            <p class="plan-card__price">税込 <span>80,000円</span> ～</p>
+                            <a href="room3.html" class="plan-card__reserve-btn">プラン詳細を見る</a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

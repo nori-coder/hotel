@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ご予約情報の入力２ | もりのホテル</title>
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="l-header">
+        <h1 class="p-header-logo">
+            <a href="index.html">
+                <img src="img/logo.png" alt="もりのホテル">
+            </a>
+        </h1>
+    </header>
+    <main>
+        <div class="reservation-page">
+            <div class="l-container">
+
+                <nav class="p-step-list">
+                    <div class="p-step-list__item">
+                        <div class="circle">1</div>
+                        <p>お客様情報<br><span>情報のご入力</span></p>
+                    </div>
+                    <div class="p-step-list__item is-active">
+                        <div class="circle">2</div>
+                        <p>お支払い<br><span>方法の選択</span></p>
+                    </div>
+                    <div class="p-step-list__item">
+                        <div class="circle">3</div>
+                        <p>予約確定<br><span>完了</span></p>
+                    </div>
+                </nav>
+
+                <div class="p-page-header">
+                    <h2 class="p-page-header__title">お支払い方法の選択</h2>
+                    <p class="p-page-header__sub">決済情報を安全に入力してください</p>
+                </div>
+
+                <form action="reservation-step3.html" method="GET">
+
+                    <p class="p-section-label">クレジットカード情報の入力</p>
+
+                    <div class="c-form-row">
+                        <div class="c-form-row__label">決済カード</div>
+                        <div class="c-form-row__content">
+
+                            <div class="c-field">
+                                <label class="c-field__title is-required">カード番号</label>
+                                <input type="text" name="card-number" placeholder="0000 0000 0000 0000" class="u-w100p"
+                                    inputmode="numeric" required>
+                                <p class="u-small u-gray u-mt10">※ハイフンなしで入力してください</p>
+                            </div>
+
+                            <div class="c-field">
+                                <label class="c-field__title is-required">有効期限</label>
+                                <div class="u-flex">
+                                    <select name="exp-month" class="u-w80" required>
+                                        <option value="" disabled selected>月</option>
+                                        <option value="01">01</option>
+                                        <option value="02">02</option>
+                                        <option value="12">12</option>
+                                    </select>
+                                    <span>/</span>
+                                    <select name="exp-year" class="u-w80" required>
+                                        <option value="" disabled selected>年</option>
+                                        <option value="26">26</option>
+                                        <option value="27">27</option>
+                                        <option value="28">28</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="c-field">
+                                <label class="c-field__title is-required">セキュリティコード</label>
+                                <div class="u-flex">
+                                    <input type="text" name="cvv" placeholder="123" class="u-w80" inputmode="numeric"
+                                        maxlength="4" required>
+                                    <span class="u-small u-gray">（カード裏面の3桁の数字）</span>
+                                </div>
+                            </div>
+
+                            <div class="c-field">
+                                <label class="c-field__title is-required">カード名義</label>
+                                <input type="text" name="card-name" placeholder="TARO MORINO" class="u-w100p" required>
+                                <p class="u-small u-gray u-mt10">※半角英大文字で入力してください</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="p-payment-notice">
+                        <p>当サイトではSSL暗号化通信により、お客様のカード情報は安全に守られています。</p>
+                    </div>
+
+                    <div class="p-btn-area">
+                        <a href="reservation-step1.html" class="c-btn-back">戻る</a>
+                        <button type="submit" class="c-btn-submit">最終確認画面へ</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

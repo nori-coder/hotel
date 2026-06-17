@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ご予約情報の入力１ | もりのホテル</title>
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="l-header">
+        <h1 class="p-header-logo">
+            <a href="index.html">
+                <img src="img/logo.png" alt="もりのホテル">
+            </a>
+        </h1>
+    </header>
+
+    <main id="reservation" class="reservation-page">
+        <div class="l-container">
+
+            <nav class="p-step-list">
+                <div class="p-step-list__item is-active">
+                    <div class="circle">1</div>
+                    <p>お客様情報<br><span>情報のご入力</span></p>
+                </div>
+                <div class="p-step-list__item">
+                    <div class="circle">2</div>
+                    <p>お支払い<br><span>方法の選択</span></p>
+                </div>
+                <div class="p-step-list__item">
+                    <div class="circle">3</div>
+                    <p>予約確定<br><span>完了</span></p>
+                </div>
+            </nav>
+
+            <div class="p-page-header">
+                <h2 class="p-page-header__title">ご予約情報入力</h2>
+                <p class="p-page-header__sub">内容をご確認の上、必要事項をご入力ください</p>
+            </div>
+
+            <dl class="c-confirm-table">
+                <div class="c-confirm-table__row">
+                    <dt>ご宿泊先</dt>
+                    <dd>もりのホテル</dd>
+                </div>
+                <div class="c-confirm-table__row">
+                    <dt>ご宿泊日程</dt>
+                    <dd>2026/4/29(水) 〜 4/30(木) 1泊</dd>
+                </div>
+                <div class="c-confirm-table__row">
+                    <dt>プラン名</dt>
+                    <dd>極上美食プラン「旬彩懐石・極み」煌コース付き</dd>
+                </div>
+                <div class="c-confirm-table__row total">
+                    <dt>お支払い合計</dt>
+                    <dd>2名様 1室 / 消費税込 <span>¥80,000〜</span></dd>
+                </div>
+            </dl>
+
+            <form action="payment.html" method="get" class="p-reservation-form h-adr">
+                <span class="p-country-name" style="display:none;">Japan</span>
+
+                <p class="p-section-label">お客様情報の入力</p>
+
+                <div class="c-form-row">
+                    <div class="c-form-row__label">代表者情報</div>
+                    <div class="c-form-row__content">
+                        <div class="c-form-row__header-box">基本情報</div>
+
+                        <div class="c-field">
+                            <label class="c-field__title is-required">氏名（漢字）</label>
+                            <div class="u-flex">
+                                <input type="text" name="last-name" placeholder="姓" required>
+                                <input type="text" name="first-name" placeholder="名" required>
+                                <span>様</span>
+                            </div>
+                        </div>
+
+                        <div class="c-field">
+                            <label class="c-field__title is-required">氏名（かな）</label>
+                            <div class="u-flex">
+                                <input type="text" name="last-name-kana" placeholder="せい" required>
+                                <input type="text" name="first-name-kana" placeholder="めい" required>
+                                <span>様</span>
+                            </div>
+                        </div>
+
+                        <div class="c-field">
+                            <label class="c-field__title is-required">郵便番号</label>
+                            <div class="u-flex">
+                                <input type="text" name="zip" placeholder="123-4567" class="u-w80 p-postal-code"
+                                    maxlength="8">
+                            </div>
+                        </div>
+
+                        <div class="c-field">
+                            <label class="c-field__title is-required">住所</label>
+                            <input type="text" name="address" placeholder="都道府県・市区町村・番地"
+                                class="u-w100p p-region p-locality p-street-address p-extended-address">
+                        </div>
+
+                        <div class="c-field">
+                            <label class="c-field__title is-required">メールアドレス</label>
+                            <input type="email" name="email" placeholder="example@mail.com" class="u-w100p" required>
+                        </div>
+
+                        <div class="c-field">
+                            <label class="c-field__title is-required">電話番号</label>
+                            <input type="tel" name="tel" placeholder="09012345678" class="u-w80" required>
+                        </div>
+
+                        <div class="c-field">
+                            <span class="c-field__title is-required">ご利用人数</span>
+                            <div class="u-flex">
+                                <select name="guests" class="u-w80" required>
+                                    <option value="" disabled selected>選択</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                                <span>名様</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="p-section-label">詳細・その他</p>
+
+                <div class="c-form-row">
+                    <div class="c-form-row__label">チェックイン</div>
+                    <div class="c-form-row__content">
+                        <div class="u-flex">
+                            <input type="time" name="checkin-time" value="15:00">
+                            <span>頃</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="c-form-row">
+                    <div class="c-form-row__label">宿泊人数内訳</div>
+                    <div class="c-form-row__content">
+                        <div class="u-flex">
+                            <span>男性</span>
+                            <select name="count-m" class="u-w80">
+                                <option value="0">0</option>
+                                <option value="1" selected>1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                            <span>名様</span>
+
+                            <span class="u-ml20">女性</span>
+                            <select name="count-f" class="u-w80">
+                                <option value="0">0</option>
+                                <option value="1" selected>1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                            <span>名様</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="c-form-row">
+                    <div class="c-form-row__label">交通手段</div>
+                    <div class="c-form-row__content">
+                        <div class="u-flex-gap">
+                            <label class="c-radio"><input type="radio" name="access" value="car"> お車</label>
+                            <label class="c-radio"><input type="radio" name="access" value="train"> 公共交通機関</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="c-form-row">
+                    <div class="c-form-row__label">お問い合わせ</div>
+                    <div class="c-form-row__content">
+                        <p class="u-mb10">アレルギーや特別なご要望がございましたらご記入ください。</p>
+                        <textarea name="message" placeholder="内容を入力してください" class="u-w100p"></textarea>
+                    </div>
+                </div>
+
+                <div class="u-center u-mt50">
+                    <p class="u-mb20">次に進んで、お支払い方法を選択してください。</p>
+                    <a href="reservation-step2.html" class="c-btn-submit">お支払い方法の選択へ</a>                
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

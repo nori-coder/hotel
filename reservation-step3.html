@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ご予約内容の最終確認 | もりのホテル</title>
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="l-header">
+        <h1 class="p-header-logo">
+            <a href="index.html">
+                <img src="img/logo.png" alt="もりのホテル">
+            </a>
+        </h1>
+    </header>
+    <main class="reservation-page">
+        <div class="l-container">
+
+            <nav class="p-step-list">
+                <div class="p-step-list__item">
+                    <div class="circle">1</div>
+                    <p>お客様情報<br><span>情報のご入力</span></p>
+                </div>
+                <div class="p-step-list__item">
+                    <div class="circle">2</div>
+                    <p>お支払い<br><span>方法の選択</span></p>
+                </div>
+                <div class="p-step-list__item is-active">
+                    <div class="circle">3</div>
+                    <p>予約内容確認<br><span>完了前の確認</span></p>
+                </div>
+            </nav>
+
+            <div class="p-page-header">
+                <h2 class="p-page-header__title">ご予約内容の最終確認</h2>
+                <p class="p-page-header__sub u-text-error">まだ予約は完了しておりません。内容に間違いがないかご確認ください。</p>
+            </div>
+
+            <div class="p-reservation-confirm">
+                <section class="p-confirm-section">
+                    <h3 class="p-confirm-section__title">ご宿泊内容</h3>
+                    <dl class="c-confirm-table">
+                        <div class="c-confirm-table__row">
+                            <dt>プラン名</dt>
+                            <dd>極上美食プラン「旬彩懐石・極み」煌コース付き</dd>
+                        </div>
+                        <div class="c-confirm-table__row">
+                            <dt>ご宿泊日程</dt>
+                            <dd>2026/4/29(水) 〜 4/30(木) 1泊</dd>
+                        </div>
+                        <div class="c-confirm-table__row">
+                            <dt>ご利用人数</dt>
+                            <dd>2名様（男性1名 / 女性1名）</dd>
+                        </div>
+                        <div class="c-confirm-table__row is-total">
+                            <dt>合計料金（税込）</dt>
+                            <dd class="u-price">¥80,000</dd>
+                        </div>
+                    </dl>
+                </section>
+
+                <section class="p-confirm-section">
+                    <h3 class="p-confirm-section__title">お客様情報</h3>
+                    <dl class="c-confirm-table">
+                        <div class="c-confirm-table__row">
+                            <dt>お名前</dt>
+                            <dd>森野 太郎 様</dd>
+                        </div>
+                        <div class="c-confirm-table__row">
+                            <dt>メールアドレス</dt>
+                            <dd>morino@example.com</dd>
+                        </div>
+                        <div class="c-confirm-table__row">
+                            <dt>お支払い方法</dt>
+                            <dd>クレジットカード決済（**** **** **** 1234）</dd>
+                        </div>
+                    </dl>
+                </section>
+
+                <form action="complete.html" method="post" class="p-final-form">
+                    <div class="p-consent-box">
+                        <label class="c-checkbox">
+                            <input type="checkbox" name="consent" required>
+                            <span class="c-checkbox__text">
+                                <a href="#" target="_blank" class="u-link">宿泊約款・利用規約</a>に同意します
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="p-btn-area">
+                        <a href="reservation-step2.html" class="c-btn-back"><i class="fa-solid fa-angle-left"></i>
+                            内容を修正する</a>
+                        <button type="submit" class="c-btn-submit is-final">
+                            この内容で予約を確定する <i class="fa-solid fa-angle-right"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
