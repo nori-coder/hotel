@@ -1,0 +1,525 @@
+@use "../common";
+@use "../variable" as v;
+@use "../mixin" as m;
+
+.onsen {
+    position: relative;
+    width: 100%;
+    height: 800px;
+    display: flex;
+    align-items: center;
+
+    @include m.tab {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        overflow: hidden; // はみ出し防止
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.85);
+            transition: transform 0.8s ease; // アニメーション速度と動き
+        }
+
+        // 背景エリア全体のホバーで画像拡大
+        &:hover img {
+            transform: scale(1.05); // 1.05倍に拡大
+        }
+
+        @include m.tab {
+            position: relative;
+            height: 300px;
+        }
+    }
+
+    &__card {
+        position: absolute;
+        top: 50%;
+        left: 5%;
+        transform: translateY(-50%);
+        background-color: rgba(255, 255, 255, 0.95);
+        padding: 40px;
+        width: 470px;
+        border-radius: 8px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        z-index: 10;
+
+        @include m.tab {
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: none;
+            width: 100%;
+            background-color: #fff;
+            border-radius: 0;
+        }
+    }
+
+    &__intro {
+        font-size: 15px;
+        line-height: 1.8;
+        margin-bottom: 30px;
+    }
+
+    &__label {
+        font-size: 14px;
+        font-weight: bold;
+        color: v.$color-bg;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 5px;
+        margin: 25px 0 10px;
+    }
+
+    &__data {
+        font-size: 13px;
+        line-height: 2;
+        color: #555;
+    }
+}
+
+//________
+.onsen-intro {
+    background-color: v.$color-bg;
+    color: #fff;
+
+    .c-section-title {
+        padding-top: 100px;
+
+        @include m.tab {
+            padding-top: 80px;
+        }
+    }
+
+    &__main-img {
+        max-width: 900px;
+        margin: 0 auto 60px;
+        overflow: hidden; // はみ出し防止
+
+        img {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            transition: transform 0.8s ease; // アニメーション設定
+        }
+
+        &:hover img {
+            transform: scale(1.05); // ホバーで拡大
+        }
+    }
+
+    &__content {
+        max-width: 900px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        gap: 60px;
+        position: relative;
+
+        // 中央の仕切り線
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 1px;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.5);
+            transform: translateX(-50%);
+
+            @include m.tab {
+                display: none;
+            }
+        }
+
+        @include m.tab {
+            flex-direction: column;
+            gap: 40px;
+        }
+    }
+
+    &__left,
+    &__right {
+        flex: 1;
+    }
+
+    &__text,
+    &__text-en {
+        font-size: 14px;
+        line-height: 2;
+        margin-bottom: 40px;
+    }
+
+    &__sub-title,
+    &__sub-title-en {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    &__time {
+        font-size: 14px;
+        letter-spacing: 0.05em;
+    }
+}
+
+//スパセクション//
+.spa {
+    background-color: v.$color-accent;
+    padding-top: 100px;
+
+    @include m.tab {
+        padding: 50px 40px;
+    }
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        gap: 100px;
+
+        @include m.tab {
+            flex-direction: column;
+            gap: 40px;
+        }
+    }
+
+    &__image {
+        flex: 1;
+        overflow: hidden; // はみ出し防止
+
+        img {
+            width: 100%;
+            display: block;
+            box-shadow: -20px 20px 0 v.$color-bg;
+            transition: transform 0.8s ease; // アニメーション設定
+        }
+
+        &:hover img {
+            transform: scale(1.05); // ホバーで拡大
+        }
+    }
+
+    &__content {
+        flex: 1;
+        padding-left: 80px;
+
+        @include m.tab {
+            padding-left: 0;
+        }
+    }
+
+    &__text {
+        font-size: 14px;
+        line-height: 2.2;
+        margin-bottom: 20px;
+        text-align: justify;
+    }
+
+    // 「開く/閉じる」のリンク部分
+    &__toggle {
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        font-size: 18px;
+        text-align: center;
+        margin-top: 100px;
+        color: v.$color-bg;
+        transition: opacity 0.3s;
+
+        @include m.tab {
+            margin-top: 50px;
+        }
+
+        &:hover {
+            opacity: 0.7;
+        }
+
+        .toggle-arrow {
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+
+        &.is-active {
+            .toggle-arrow {
+                transform: rotate(90deg); // 閉じる時に矢印を下向きにする
+            }
+        }
+    }
+
+    &__info {
+        &-title {
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: v.$color-bg;
+        }
+
+        &-detail {
+            font-size: 14px;
+        }
+    }
+
+    // アコーディオンの中身（初期状態は非表示）
+    &__accordion {
+        display: none;
+        width: 100%;
+        overflow: hidden;
+    }
+}
+
+// -------------------------------------------
+// スパメニュー（アコーディオン内）
+// -------------------------------------------
+.program {
+    padding-top: 150px;
+    background-color: v.$color-accent;
+
+    @include m.tab {
+        padding-top: 0;
+    }
+}
+
+.menu-list {
+    margin-top: 40px;
+    border-top: 1px solid v.$color-font;
+
+    &__item {
+        display: flex;
+        border-bottom: 1px solid v.$color-font;
+        margin: 0;
+
+        @include m.tab {
+            flex-direction: column;
+        }
+    }
+
+    &__name {
+        width: 200px;
+        padding: 40px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        border-right: 1px solid v.$color-font;
+
+        @include m.tab {
+            width: 100%;
+            border-right: none;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.03);
+        }
+    }
+
+    &__content {
+        flex: 1;
+        padding: 40px;
+        margin: 0;
+
+        @include m.tab {
+            padding: 20px;
+        }
+    }
+
+    &__info {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: v.$color-bg;
+    }
+
+    &__text {
+        font-size: 14px;
+        line-height: 2;
+        color: #555;
+    }
+}
+
+//酵素風呂セクション
+.kouso {
+    background-color: v.$color-accent;
+    padding: 100px 0;
+
+    @include m.tab {
+        padding: 0 40px;
+    }
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        gap: 100px;
+
+        @include m.tab {
+            flex-direction: column-reverse;
+            gap: 40px;
+        }
+    }
+
+    &__image {
+        flex: 1;
+        overflow: hidden; // はみ出し防止を追加
+
+        img {
+            width: 100%;
+            display: block;
+            box-shadow: 20px 20px 0 v.$color-bg;
+            transition: transform 0.8s ease; // アニメーション設定
+        }
+
+        &:hover img {
+            transform: scale(1.05); // ホバーで拡大
+        }
+    }
+
+    &__content {
+        flex: 1;
+        padding-right: 80px;
+
+        @include m.tab {
+            padding-right: 0;
+        }
+    }
+
+    &__text {
+        font-size: 14px;
+        line-height: 2.2;
+        margin-bottom: 30px;
+        text-align: justify;
+    }
+
+    &__info {
+        &-title {
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: v.$color-bg;
+        }
+
+        &-detail {
+            font-size: 14px;
+        }
+    }
+}
+
+//お土産セクション
+.omiyage {
+    background-color: v.$color-accent;
+    padding-bottom: 100px;
+
+    @include m.tab {
+        padding: 50px 40px;
+    }
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        gap: 100px;
+
+        @include m.tab {
+            flex-direction: column;
+            gap: 40px;
+        }
+    }
+
+    &__image {
+        flex: 1;
+        overflow: hidden; // はみ出し防止
+
+        img {
+            width: 100%;
+            display: block;
+            box-shadow: -20px 20px 0 v.$color-bg;
+            transition: transform 0.8s ease; // アニメーション設定
+        }
+
+        &:hover img {
+            transform: scale(1.05); // ホバーで拡大
+        }
+    }
+
+    &__content {
+        flex: 1;
+        padding-left: 80px;
+
+        @include m.tab {
+            padding-left: 0;
+        }
+    }
+
+    &__text {
+        font-size: 14px;
+        line-height: 2.2;
+        margin-bottom: 20px;
+        text-align: justify;
+    }
+
+    &__info {
+        &-title {
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: v.$color-bg;
+        }
+
+        &-detail {
+            font-size: 14px;
+        }
+    }
+}
+
+// -------------------------------------------
+// Onsen Footer Nav（ページ下部のナビゲーション）
+// -------------------------------------------
+.onsen-footer-nav {
+    background-color: v.$color-bg;
+    padding: 100px 0;
+    text-align: center;
+
+    @include m.tab {
+        padding: 60px 20px;
+    }
+}
+
+.footer-btn-area {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+
+    @include m.tab {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .c-btn-outline {
+        display: inline-block;
+        width: 280px;
+        padding: 20px 0;
+        border: 1px solid #fff;
+        color: #fff;
+        text-decoration: none;
+        font-size: 15px;
+        letter-spacing: 0.1em;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: #fff;
+            color: v.$color-bg;
+            opacity: 1;
+        }
+
+        @include m.tab {
+            width: 100%;
+            max-width: 350px;
+        }
+    }
+}

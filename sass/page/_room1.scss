@@ -1,0 +1,394 @@
+@use "../common";
+@use "../variable" as v;
+@use "../mixin" as m;
+
+/* ==========================================================================
+   Room Section（客室紹介・親要素）
+   ========================================================================== */
+.room {
+    background-color: v.$color-bg;
+    color: #fff;
+    text-align: center;
+    overflow: hidden; // 装飾線のはみ出し防止
+
+    &__title-wrap {
+        position: relative;
+        padding: 100px 20px;
+
+        @include m.tab {
+            padding: 60px 15px;
+        }
+
+        /* 左右の飾り線の共通設定 */
+        &::before,
+        &::after,
+        .line-left-bottom,
+        .line-right,
+        .line-right-top,
+        .line-right-bottom {
+            background: #fff;
+            position: absolute;
+        }
+
+        /* 左側の装飾 */
+        &::before {
+            // 縦
+            content: "";
+            top: 50%;
+            left: 25%;
+            width: 1px;
+            height: 40px;
+            transform: translateY(-50%);
+
+            @include m.tab {
+                left: 5%;
+                height: 30px;
+            }
+        }
+
+        &::after {
+            // 上（／）
+            content: "";
+            top: calc(50% - 20px);
+            left: 25%;
+            width: 20px;
+            height: 1px;
+            transform: rotate(-45deg);
+            transform-origin: left center;
+
+            @include m.tab {
+                top: calc(50% - 15px);
+                left: 5%;
+                width: 15px;
+            }
+        }
+
+        .line-left-bottom {
+            // 下（＼）
+            top: calc(50% + 20px);
+            left: 25%;
+            width: 20px;
+            height: 1px;
+            transform: rotate(45deg);
+            transform-origin: left center;
+
+            @include m.tab {
+                top: calc(50% + 15px);
+                left: 5%;
+                width: 15px;
+            }
+        }
+
+        /* 右側の装飾 */
+        .line-right {
+            // 縦
+            top: 50%;
+            right: 25%;
+            width: 1px;
+            height: 40px;
+            transform: translateY(-50%);
+
+            @include m.tab {
+                right: 5%;
+                height: 30px;
+            }
+        }
+
+        .line-right-top {
+            // 上（＼）
+            top: calc(50% - 20px);
+            right: 25%;
+            width: 20px;
+            height: 1px;
+            transform: rotate(45deg);
+            transform-origin: right center;
+
+            @include m.tab {
+                top: calc(50% - 15px);
+                right: 5%;
+                width: 15px;
+            }
+        }
+
+        .line-right-bottom {
+            // 下（／）
+            top: calc(50% + 20px);
+            right: 25%;
+            width: 20px;
+            height: 1px;
+            transform: rotate(-45deg);
+            transform-origin: right center;
+
+            @include m.tab {
+                top: calc(50% + 15px);
+                right: 5%;
+                width: 15px;
+            }
+        }
+
+        /* 中央の横線 */
+        .line-center {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 80%;
+            max-width: 800px;
+            height: 1px;
+            background: #fff;
+            transform: translateX(-50%);
+        }
+    }
+
+    &__img {
+        padding: 0 20px;
+
+        img {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto 60px;
+            border-radius: 6px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+    }
+
+    &__text {
+        font-size: 15px;
+        line-height: 2.4;
+        letter-spacing: 0.1em;
+        max-width: 810px;
+        text-align: left;
+        margin: 0 auto;
+
+        @include m.tab {
+            font-size: 14px;
+            line-height: 2.0;
+        }
+    }
+
+    &__more {
+        margin-top: 60px;
+        height: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        @include m.tab {
+            margin-top: 30px;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+
+            .arrow {
+                display: block;
+                margin-top: 5px;
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+   Room Detail（アコーディオンの中身）
+   ========================================================================== */
+.room-detail {
+    display: none;
+    background-color: v.$color-accent;
+    padding: 0 40px 100px;
+
+    @include m.tab {
+        padding-bottom: 60px;
+    }
+
+    &.is-active {
+        animation: roomFadeIn 0.8s ease forwards;
+    }
+
+    &__close {
+        text-align: center;
+        padding: 40px 0;
+
+        a {
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+            letter-spacing: 0.05em;
+
+            i {
+                margin-left: 5px;
+            }
+        }
+    }
+
+    &__plan {
+        max-width: 750px;
+        margin: 0 auto 80px;
+        text-align: center;
+
+        @include m.tab {
+            margin-bottom: 50px;
+        }
+    }
+
+    &__title {
+        font-size: 32px;
+        letter-spacing: 0.2em;
+        margin-bottom: 15px;
+        font-weight: 500;
+
+        @include m.tab {
+            font-size: 24px;
+            letter-spacing: 0.1em;
+        }
+    }
+
+    &__plan-name {
+        font-size: 16px;
+        margin-bottom: 50px;
+        color: #666;
+    }
+
+    &__meal-item {
+        margin-bottom: 40px;
+
+        h5 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        p {
+            font-size: 14px;
+            line-height: 2.2;
+            color: #444;
+            max-width: 600px;
+            margin: 0 auto;
+
+            @include m.tab {
+                text-align: left;
+            }
+        }
+    }
+
+    &__time {
+        border-top: 1px dashed #999;
+        border-bottom: 1px dashed #999;
+        padding: 30px 0;
+        margin: 50px auto;
+        max-width: 320px;
+
+        &-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            margin-bottom: 12px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__price {
+        font-size: 18px;
+        margin-top: 40px;
+
+        .amount {
+            font-size: 26px;
+            font-weight: bold;
+            margin-left: 20px;
+        }
+    }
+
+    &__amenity {
+        max-width: 800px;
+        margin: 80px auto;
+
+        @include m.tab {
+            margin: 50px auto;
+        }
+    }
+
+    .amenity-item {
+        display: flex;
+        gap: 30px;
+        margin-bottom: 35px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        padding-bottom: 25px;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        @include m.tab {
+            flex-direction: column;
+            gap: 10px;
+            text-align: left;
+        }
+
+        &__icon {
+            flex: 0 0 30px;
+            font-size: 20px;
+            color: #6b705c;
+            text-align: center;
+
+            @include m.tab {
+                text-align: left;
+            }
+        }
+
+        &__content {
+            dt {
+                font-weight: bold;
+                font-size: 15px;
+                margin-bottom: 8px;
+            }
+
+            dd {
+                font-size: 14px;
+                line-height: 1.8;
+                color: #555;
+            }
+        }
+    }
+
+    &__footer {
+        text-align: center;
+
+        .c-btn-reserve {
+            display: inline-block;
+            background-color: #6b705c;
+            color: #fff;
+            padding: 22px 100px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 15px;
+            transition: 0.3s;
+
+            &:hover {
+                opacity: 0.8;
+            }
+
+            @include m.tab {
+                width: 100%;
+                box-sizing: border-box;
+                padding: 18px 0;
+            }
+        }
+    }
+}
+
+@keyframes roomFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

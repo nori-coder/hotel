@@ -1,0 +1,99 @@
+@use "../common";
+@use "../variable" as v;
+@use "../mixin" as m;
+
+/* ---------------------------------------------------------
+   最終確認ページ専用スタイル
+--------------------------------------------------------- */
+.p-reservation-confirm {
+    margin-top: 40px;
+}
+
+.p-confirm-section {
+    margin-bottom: 40px;
+
+    &__title {
+        font-size: 18px;
+        font-weight: bold;
+        border-bottom: 2px solid v.$color-btn; // ボタンと同じ色をアクセントに
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        color: v.$color-font;
+    }
+}
+
+/* 確認用のテーブル風リスト */
+.c-confirm-table {
+    &__row {
+        display: flex;
+        padding: 20px 0;
+        border-bottom: 1px solid #eee;
+
+        @include m.tab {
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        dt {
+            width: 200px;
+            font-weight: bold;
+            color: #666;
+            flex-shrink: 0;
+        }
+
+        dd {
+            flex: 1;
+            color: v.$color-font;
+        }
+
+        /* 合計金額の行だけ特別に目立たせる */
+        &.is-total {
+            background-color: v.$color-accent;
+            padding: 20px;
+            border-bottom: none;
+            align-items: center;
+
+            .u-price {
+                font-size: 24px;
+                font-weight: bold;
+                color: #d32f2f; // 金額は赤系で目立たせる
+            }
+        }
+    }
+}
+
+/* 同意チェックボックスのエリア */
+.p-consent-box {
+    text-align: center;
+    background: #f9f9f9;
+    padding: 30px;
+    margin: 40px 0;
+    border: 1px solid #ddd;
+
+    .c-checkbox {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        font-weight: bold;
+
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+
+/* 最終確定ボタン固有の調整 */
+.c-btn-submit.is-final {
+    background-color: #d32f2f; // 最後は「確定」感が出るように色を変えるのもアリ
+    max-width: 500px; // 少し大きめに
+}
+
+.u-text-error {
+    color: #d32f2f;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}

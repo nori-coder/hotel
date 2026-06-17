@@ -1,0 +1,362 @@
+@use "../common";
+@use "../variable" as v;
+@use "../mixin" as m;
+
+// -------------------------------------------
+// Intro Section
+// -------------------------------------------
+.intro {
+    background-color: v.$color-bg;
+    padding-top: 100px;
+    color: v.$color-text;
+    text-align: center;
+
+    @include m.tab {
+        padding-top: 50px;
+    }
+
+    &__title {
+        font-size: 28px;
+        letter-spacing: 0.1em;
+        font-weight: 500;
+        margin-bottom: 40px;
+        line-height: 1.6;
+
+        @include m.tab {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__text {
+        font-size: 16px;
+        line-height: 2.2;
+        letter-spacing: 0.08em;
+
+        @include m.tab {
+            font-size: 14px;
+            line-height: 1.8;
+            text-align: left;
+            display: inline-block;
+        }
+    }
+}
+
+// -------------------------------------------
+// Features Section
+// -------------------------------------------
+.features {
+    &__item {
+        margin-bottom: 60px;
+        position: relative;
+
+        @include m.tab {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__img img {
+        width: 100%;
+        height: 600px;
+        object-fit: cover;
+
+        @include m.tab {
+            height: 350px;
+        }
+    }
+
+    &__content {
+        background: #fff;
+        padding-top: 30px;
+        border-radius: 20px 20px 0 0;
+        width: 400px;
+        margin: -100px auto 0;
+        position: relative;
+        z-index: 2;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        text-align: center;
+        overflow: hidden;
+
+        @include m.tab {
+            width: 80%;
+            margin-top: -60px;
+            padding-top: 10px;
+        }
+    }
+
+    &__title {
+        font-size: 22px;
+        margin-bottom: 5px;
+        letter-spacing: 0.15em;
+        color: v.$color-font;
+
+        @include m.tab {
+            font-size: 18px;
+        }
+    }
+
+    &__subtitle {
+        display: block;
+        font-size: 14px;
+        color: #777;
+        margin-bottom: 25px;
+
+        @include m.tab {
+            font-size: 12px;
+            margin-bottom: 15px;
+        }
+    }
+}
+
+// -------------------------------------------
+// Facilities Section
+// -------------------------------------------
+.facilities {
+    background-color: v.$color-bg;
+    color: v.$color-text;
+    padding-top: 100px;
+
+    @include m.tab {
+        padding-top: 50px;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+
+        @include m.tab {
+            gap: 40px;
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+
+        @include m.tab {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+    }
+
+    &__img {
+        flex: 1;
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+        }
+    }
+
+    &__info {
+        flex: 1;
+
+        .facilities__en-title {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        .facilities__ja-title {
+            font-size: 26px;
+            margin-bottom: 20px;
+            font-weight: 500;
+
+            @include m.tab {
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+        }
+
+        .facilities__description {
+            font-size: 14px;
+            line-height: 2;
+            opacity: 0.9;
+
+            @include m.tab {
+                line-height: 1.7;
+            }
+        }
+    }
+
+    &__footer {
+        text-align: center;
+        margin-top: 80px;
+
+        @include m.tab {
+            margin-top: 40px;
+        }
+    }
+}
+
+// -------------------------------------------
+// News Section
+// -------------------------------------------
+.news {
+    padding-top: 100px;
+    color: v.$color-font;
+
+    @include m.tab {
+        padding-top: 50px;
+    }
+
+    &__list {
+        max-width: 900px;
+        margin: 0 auto;
+        border-top: 1px solid #ccc;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        padding: 25px 10px;
+        border-bottom: 1px solid #ccc;
+
+        @include m.tab {
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 15px 5px;
+        }
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+    }
+
+    &__date {
+        flex-basis: 150px;
+
+        @include m.tab {
+            flex-basis: auto;
+            margin-bottom: 5px;
+            font-size: 13px;
+        }
+    }
+
+    &__title {
+        flex: 1;
+        font-size: 15px;
+
+        @include m.tab {
+            font-size: 14px;
+        }
+    }
+
+    &__footer {
+        text-align: center;
+        margin-top: 80px;
+
+        .c-btn-outline {
+            color: #333;
+            border-color: #333;
+
+            &:hover {
+                background-color: #333;
+                color: #fff;
+            }
+        }
+    }
+}
+
+// -------------------------------------------
+// Access Section
+// -------------------------------------------
+.access {
+    position: relative;
+    width: 100%;
+    height: 650px;
+    overflow: hidden;
+
+    @include m.tab {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__map {
+        width: 100%;
+        height: 100%;
+
+        @include m.tab {
+            height: 300px;
+            order: 1;
+        }
+    }
+
+    &__map iframe {
+        width: 100%;
+        height: 100%;
+        filter: grayscale(20%);
+    }
+
+    &__card {
+        position: absolute;
+        top: 50%;
+        left: 5%;
+        transform: translateY(-50%);
+        background-color: rgba(255, 255, 255, 0.95);
+        padding: 40px;
+        width: 320px;
+        border-radius: 8px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        text-align: center;
+        z-index: 10;
+
+        @include m.tab {
+            position: static;
+            transform: none;
+            width: 100%;
+            padding: 60px 40px;
+            order: 2;
+        }
+    }
+
+    &__address,
+    &__text,
+    &__text-en {
+        font-size: 13px;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+    &__buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .btn-outline,
+    .btn-green {
+        display: block;
+        padding: 12px;
+        text-decoration: none;
+        font-size: 14px;
+        border-radius: 4px;
+        transition: 0.3s;
+    }
+
+    .btn-outline {
+        border: 1px solid v.$color-font;
+        color: v.$color-font;
+    }
+
+    .btn-green {
+        background-color: #344e3d;
+        /* 画像のような深緑 */
+        color: v.$color-text;
+        border: 1px solid #344e3d;
+    }
+
+    .btn-outline:hover,
+    .btn-green:hover {
+        opacity: 0.8;
+    }
+}

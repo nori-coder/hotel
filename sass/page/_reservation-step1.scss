@@ -1,0 +1,425 @@
+@use "../variable" as v;
+@use "../mixin" as m;
+
+/* ---------------------------------------------------------
+   ヘッダー（共通・予約ページ）
+--------------------------------------------------------- */
+.l-header {
+    background-color: v.$color-bg;
+    border-bottom: 1px solid #eee;
+}
+
+.p-header-logo {
+    padding: 30px 0;
+    background-color: v.$color-bg;
+    text-align: center;
+
+    img {
+        height: 80px;
+        width: auto;
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+/* ---------------------------------------------------------
+   予約ページ全体
+--------------------------------------------------------- */
+.reservation-page {
+    padding: 80px 0;
+    background-color: #fff;
+    color: v.$color-font;
+    line-height: 1.6;
+
+    @include m.tab {
+        padding: 40px 0;
+    }
+}
+
+/* ---------------------------------------------------------
+   ステップナビ
+--------------------------------------------------------- */
+.p-step-list {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+
+    @include m.tab {
+        margin-bottom: 40px;
+        padding: 0 10px;
+    }
+
+    &__item {
+        position: relative;
+        text-align: center;
+        opacity: 0.4;
+        flex: 1;
+        max-width: 200px;
+
+        &.is-active {
+            opacity: 1;
+        }
+
+        .circle {
+            width: 40px;
+            height: 40px;
+            background: #ccc;
+            color: #fff;
+            border-radius: 50%;
+            margin: 0 auto 10px;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+
+            @include m.tab {
+                width: 32px;
+                height: 32px;
+                font-size: 12px;
+            }
+        }
+
+        p {
+            font-size: 14px;
+            font-weight: bold;
+
+            @include m.tab {
+                font-size: 11px;
+            }
+
+            span {
+                font-size: 11px;
+                display: block;
+                margin-top: 5px;
+                font-weight: normal;
+                color: #666;
+            }
+        }
+
+        &:not(:first-child)::before {
+            content: "";
+            position: absolute;
+            top: 20px;
+            right: 50%;
+            width: 100%;
+            height: 1px;
+            border-top: 1px dotted #ccc;
+            z-index: 1;
+
+            @include m.tab {
+                top: 16px;
+            }
+        }
+    }
+}
+
+/* ---------------------------------------------------------
+   確認テーブル
+--------------------------------------------------------- */
+.c-confirm-table {
+    border-top: 2px solid v.$color-btn;
+    margin-bottom: 60px;
+
+    &__row {
+        display: flex;
+        border-bottom: 1px solid #eee;
+
+        @include m.tab {
+            flex-direction: column;
+        }
+
+        dt {
+            flex: 0 0 250px;
+            background: #f9f9f9;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 14px;
+
+            @include m.tab {
+                flex: none;
+            }
+        }
+
+        dd {
+            flex: 1;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        &.total {
+            background: v.$color-accent;
+
+            span {
+                font-size: 24px;
+                font-weight: bold;
+                margin-left: 10px;
+                color: v.$color-btn;
+            }
+        }
+    }
+}
+
+/* ---------------------------------------------------------
+   フォームレイアウト
+--------------------------------------------------------- */
+.p-section-label {
+    font-weight: bold;
+    margin: 60px 0 20px;
+    font-size: 18px;
+    color: v.$color-font;
+
+    @include m.tab {
+        margin: 40px 0 15px;
+    }
+}
+
+.c-form-row {
+    display: flex;
+    border-top: 1px solid #eee;
+
+    @include m.tab {
+        flex-direction: column;
+    }
+
+    &:last-of-type {
+        border-bottom: 1px solid #eee;
+    }
+
+    &__label {
+        flex: 0 0 240px;
+        background: #f2f2f2;
+        padding: 30px 20px;
+        font-weight: bold;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+
+        @include m.tab {
+            flex: none;
+        }
+    }
+
+    &__content {
+        flex: 1;
+        padding: 40px;
+
+        @include m.tab {
+            padding: 30px 20px;
+        }
+    }
+
+    &__header-box {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        font-weight: bold;
+        font-size: 14px;
+        margin-bottom: 30px;
+        color: v.$color-btn;
+
+        &::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background-color: #ccc;
+        }
+    }
+}
+
+/* ---------------------------------------------------------
+   入力パーツ（共通スタイル）
+--------------------------------------------------------- */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="time"],
+select,
+textarea {
+    border: 1px solid #aaa;
+    padding: 12px;
+    font-size: 15px;
+    background: #fff;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+    border-radius: 4px;
+
+    &:focus {
+        border-color: v.$color-btn;
+        outline: none;
+    }
+
+    @include m.tab {
+        font-size: 16px;
+    }
+}
+
+/* セレクトボックス専用（ドロップダウン用） */
+select {
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    padding-right: 38px; // 矢印分のスペース
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+
+    @include m.tab {
+        width: 100%;
+    }
+
+    // 「選択してください」の色を薄くする
+    &:invalid {
+        color: #aaa;
+    }
+}
+
+textarea {
+    width: 100%;
+    min-height: 180px;
+    resize: vertical;
+}
+
+.c-field {
+    margin-bottom: 30px;
+
+    &__title {
+        display: block;
+        font-weight: bold;
+        font-size: 14px;
+        margin-bottom: 10px;
+
+        &.is-required::after {
+            content: "必須";
+            margin-left: 10px;
+            font-size: 10px;
+            padding: 2px 6px;
+            background: #d32f2f;
+            color: #fff;
+            vertical-align: middle;
+            border-radius: 2px;
+        }
+    }
+}
+
+.c-radio {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+/* ---------------------------------------------------------
+   ボタン
+--------------------------------------------------------- */
+/* ---------------------------------------------------------
+   ボタン（1ページ目用）
+--------------------------------------------------------- */
+// .c-btn-submit {
+//     display: flex; // 中の文字を中央にするため
+//     align-items: center; // 上下中央
+//     justify-content: center; // 左右中央
+//     background: v.$color-btn;
+//     color: v.$color-text;
+//     padding: 20px 80px;
+//     border: none;
+//     font-size: 18px;
+//     font-weight: bold;
+//     cursor: pointer;
+
+//     /* ↓ここが重要：確実に中央へ */
+//     margin: 40px auto 0; // 左右をautoに、上には少し余裕を
+//     width: fit-content; // 中身のサイズに合わせる
+//     max-width: 400px; // 大きくなりすぎないように制限
+
+//     transition: opacity 0.3s;
+//     border-radius: 4px;
+
+//     &:hover {
+//         opacity: 0.8;
+//     }
+
+//     @include m.tab {
+//         width: 100%;
+//         max-width: none;
+//         padding: 15px 0;
+//     }
+// }
+
+/* ---------------------------------------------------------
+   ユーティリティ
+--------------------------------------------------------- */
+.u-flex {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.u-flex-gap {
+    display: flex;
+    gap: 20px;
+}
+
+// 宿泊人数の数字を中央寄せにしたい場合（お好みで）
+select[name="count-m"],
+select[name="count-f"] {
+    text-align: center;
+    padding-left: 20px;
+}
+
+.u-w100p {
+    width: 100% !important;
+}
+
+.u-w80 {
+    width: 120px;
+}
+
+.u-red {
+    color: #d32f2f;
+    font-size: 14px;
+}
+
+.u-center {
+    text-align: center;
+}
+
+.u-mb10 {
+    margin-bottom: 10px;
+}
+
+.u-mb20 {
+    margin-bottom: 20px;
+}
+
+.u-mt50 {
+    margin-top: 50px;
+}
+
+.u-ml20 {
+    margin-left: 20px;
+
+    @include m.tab {
+        margin-left: 0;
+    }
+}
+
+.p-cancel__list {
+    li {
+        display: flex;
+        justify-content: space-between;
+        max-width: 300px;
+        border-bottom: 1px dotted #ccc;
+        padding: 8px 0;
+        font-size: 14px;
+
+        @include m.tab {
+            max-width: 100%;
+        }
+    }
+}

@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+@use "common";
+@use "mixin";
+@use "variable";
+
+// page
+@use "page/top";
+@use "page/news";
+@use "page/onsen";
+@use "page/meal";
+@use "page/room1";
+@use "page/room2";
+@use "page/room3";
+@use "page/reservation-step1";
+@use "page/reservation-step2";
+@use "page/reservation-step3";
+@use "page/access";

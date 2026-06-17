@@ -1,0 +1,197 @@
+@use "../common";
+@use "../variable" as v;
+@use "../mixin" as m;
+
+.access-guide {
+    padding: 100px 0;
+    // 背景に変数のアクセントカラーを薄く使うか、白系に
+    background-color: #fff;
+
+    .access-category {
+        margin-bottom: 100px;
+
+        &__title {
+            font-family: 'Zen Old Mincho', serif;
+            font-size: 1.6rem;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #5d6d4e; // ホテルのテーマカラー
+            position: relative;
+            padding-bottom: 15px;
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 40px;
+                height: 1px;
+                background: #5d6d4e;
+            }
+
+            @include m.tab {
+                font-size: 1.3rem;
+            }
+        }
+    }
+
+    .access-group {
+        margin-bottom: 60px;
+
+        &__title {
+            font-family: 'Zen Old Mincho', serif;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+
+            &::before {
+                content: "";
+                width: 15px;
+                height: 15px;
+                background: #5d6d4e;
+                margin-right: 12px;
+            }
+        }
+    }
+
+    // 右側の緑の帯と左側のルートを繋ぐラッパー
+    .access-destination-wrapper {
+        display: flex;
+        align-items: stretch; // 高さを揃えて緑の帯を伸ばす
+        margin-bottom: 20px;
+
+        @include m.tab {
+            flex-direction: column;
+        }
+    }
+
+    .access-rows-group {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .access-row {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        @include m.tab {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+
+    .access-node {
+        width: 130px;
+        height: 75px;
+        border: 1px solid v.$color-font;
+        background: v.$color-accent; // 変数のベージュを使用
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-size: 0.85rem;
+        flex-shrink: 0;
+
+        .en {
+            font-size: 0.65rem;
+            font-weight: normal;
+            margin-top: 4px;
+            color: #777;
+        }
+
+        @include m.tab {
+            width: 120px;
+            height: 65px;
+        }
+    }
+
+    .access-path {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 10px;
+        min-width: 350px; // PCでの最小幅を調整
+
+        .label {
+            font-size: 0.7rem;
+            margin-bottom: 8px;
+            text-align: center;
+            color: v.$color-font;
+        }
+
+        @include m.tab {
+            min-width: 80px;
+        }
+    }
+
+    // 線と矢印
+    .arrow-dotted,
+    .arrow-solid {
+        width: 100%;
+        height: 1px;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: -4px;
+            right: 0;
+            width: 8px;
+            height: 8px;
+            border-top: 1px solid v.$color-font;
+            border-right: 1px solid v.$color-font;
+            transform: rotate(45deg);
+        }
+    }
+
+    .arrow-dotted {
+        border-top: 1px dotted v.$color-font;
+    }
+
+    .arrow-solid {
+        border-top: 1px solid v.$color-font;
+    }
+
+    // 右側の緑のゴール地点
+    .access-goal {
+        width: 80px;
+        background-color: #5d6d4e; // ホテルのテーマカラー
+        margin-left: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+
+        .goal-text {
+            font-family: 'Zen Old Mincho', serif;
+            color: v.$color-text;
+            writing-mode: vertical-rl;
+            letter-spacing: 0.4em;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        @include m.tab {
+            width: 100%;
+            height: 50px;
+            margin-left: 0;
+            margin-top: 20px;
+
+            .goal-text {
+                writing-mode: horizontal-tb;
+                letter-spacing: 0.2em;
+            }
+        }
+    }
+}

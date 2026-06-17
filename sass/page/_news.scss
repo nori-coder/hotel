@@ -1,0 +1,33 @@
+@use "../common";
+@use "../variable" as v;
+@use "../mixin" as m;
+
+.date {
+    display: block;
+    margin-bottom: 6px;
+    color: v.$color-font;
+}
+
+.article-title {
+    font-size: 18px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #999;
+    padding-bottom: 20px;
+}
+
+.content {
+    line-height: 2;
+
+    p {
+        margin-bottom: 27px;
+    }
+}
+
+.block {
+    margin: 30px 0;
+}
+
+.block-title {
+    font-weight: bold;
+    margin-bottom: 6px;
+}
